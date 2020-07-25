@@ -28,7 +28,30 @@ def apply_kr_hello(response):
 def homepage():
     """Displays the homepage."""
     return render_template('index.html')
+
+
+  
+with open("audre_lorde_excerpt.txt") as f:
+    text = f.read()
+
+# Build the model.
+text_model = markovify.NewlineText(text)
     
+# Print five randomly-generated sentences
+
+
+sentence_group = []
+
+for i in range(5):
+    sentence = text_model.make_sentence()
+    sentence_group.append(sentence)
+    # print(sentence)
+print("<3<3<3<3")
+
+" ".join(sentence_group)
+
+
+
 @app.route('/dreams', methods=['GET', 'POST'])
 def dreams():
     """Simple API endpoint for dreams. 
@@ -43,22 +66,6 @@ def dreams():
     return jsonify(DREAMS)
 
 
-  
-print("hey!")
-
-with open("audre_lorde_excerpt.txt") as f:
-    text = f.read()
-
-# Build the model.
-text_model = markovify.NewlineText(text)
-    
-# Print five randomly-generated sentences
-
-
-for i in range(5):
-    sentence = text_model.make_sentence()
-    print(sentence)
-print("<3<3<3<3")
 
 if __name__ == '__main__':
     app.run()
