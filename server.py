@@ -46,10 +46,11 @@ for i in range(5):
     sentence = text_model.make_sentence()
     sentence_group.append(sentence)
     # print(sentence)
-print("<3<3<3<3")
+print("<3<3<3🌸💫")
 
-" ".join(sentence_group)
+sentence_glue = "\n".join(sentence_group)
 
+print(sentence_glue)
 
 
 @app.route('/dreams', methods=['GET', 'POST'])
