@@ -4,9 +4,12 @@
 $(function() {
   
   console.log("hey!!!!!!!!!!")
-  $('a#test').bind('click', function() {
+  $('#test').bind('click', function() {
+    console.log(this)
+    
     $.getJSON('/background_process_test',
         function(data) {
+        console.log(data);
       //do nothing
     });
     return false;
