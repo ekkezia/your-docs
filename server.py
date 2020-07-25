@@ -53,6 +53,8 @@ with open("audre_lorde_excerpt.txt") as f:
 text_model = markovify.NewlineText(text)
     
 # Print five randomly-generated sentences
+
+
 for i in range(5):
     sentence = text_model.make_sentence()
     print(sentence)
