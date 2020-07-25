@@ -1,19 +1,6 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
-#       _                              
-#      | |                             
-#    __| |_ __ ___  __ _ _ __ ___  ___ 
-#   / _` | '__/ _ \/ _` | '_ ` _ \/ __|
-#  | (_| | | |  __/ (_| | | | | | \__ \
-#   \__,_|_|  \___|\__,_|_| |_| |_|___/ .
-#
-# A 'Fog Creek'–inspired demo by Kenneth Reitz™
-
 import os
 from flask import Flask, request, render_template, jsonify
 import markovify
-
 # Support for gomix's 'front-end' and 'back-end' UI.
 app = Flask(__name__, static_folder='public', template_folder='views')
 
@@ -54,6 +41,22 @@ def dreams():
     
     # Return the list of remembered dreams. 
     return jsonify(DREAMS)
+
+
+  
+print("hey!")
+
+with open("audre_lorde_excerpt.txt") as f:
+    text = f.read()
+
+# Build the model.
+text_model = markovify.NewlineText(text)
+    
+# Print five randomly-generated sentences
+for i in range(5):
+    sentence = text_model.make_sentence()
+    print(sentence)
+print("<3<3<3<3")
 
 if __name__ == '__main__':
     app.run()
