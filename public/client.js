@@ -1,26 +1,12 @@
-// client-side js
-// run by the browser each time your view template is loaded
 
-// by default, you've got jQuery,
-// add other scripts at the bottom of index.html
+console.log("hey!!")
 
 $(function() {
-  console.log('hello world :o');
-  
-  $.get('/dreams', function(dreams) {
-    dreams.forEach(function(dream) {
-      $('<p></li>').text(dream).appendTo('#dreams');
+  $('a#test').bind('click', function() {
+    $.getJSON('/background_process_test',
+        function(data) {
+      //do nothing
     });
+    return false;
   });
-
-  $('form').submit(function(event) {
-    event.preventDefault();
-    dream = $('input').val();
-    $.post('/dreams?' + $.param({'dream': dream}), function() {
-      $('<li></li>').text(dream).appendTo('ul#dreams');
-      $('input').val('');
-      $('input').focus();
-    });
-  });
-
 });

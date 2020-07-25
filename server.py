@@ -46,25 +46,19 @@ for i in range(5):
     sentence = text_model.make_sentence()
     sentence_group.append(sentence)
     # print(sentence)
-print("<3<3<3🌸💫")
+print("<3<3<3🌸🌸!!🌸💫")
 
 sentence_glue = "\n".join(sentence_group)
 
 print(sentence_glue)
 
 
-@app.route('/dreams', methods=['GET', 'POST'])
-def dreams():
-    """Simple API endpoint for dreams. 
-    In memory, ephemeral, like real dreams.
-    """
-  
-    # Add a dream to the in-memory database, if given. 
-    if 'dream' in request.args:
-        DREAMS.append(request.args['dream'])
-    
-    # Return the list of remembered dreams. 
-    return jsonify(DREAMS)
+
+#background process happening without any refreshing
+@app.route('/background_process_test')
+def background_process_test():
+    print ("Hello!!!!!!!")
+    return ("nothing")
 
 
 
