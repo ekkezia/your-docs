@@ -2,16 +2,14 @@
 
 
 $(function() {
-  
-  console.log("hey!!!!!!!!!!")
-  $('#test').bind('click', function() {
-    console.log(this)
+
+  $('#button').bind('click', function() {
+      console.log("button clicked!");
     
-    $.getJSON('/background_process_test',
-        function(data) {
-        console.log(data);
-      //do nothing
-    });
+      $.get('/background_process_test', function(data) {
+        $('<p></p>').text(data).appendTo('#button-container');
+      });
+    
     return false;
   });
 });

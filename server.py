@@ -53,7 +53,7 @@ def background_process_test():
 
     print(sentence_glue)
  
-    return ("nothing")
+    return (sentence_glue)
 
 
 
