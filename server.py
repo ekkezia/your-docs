@@ -8,19 +8,6 @@ app = Flask(__name__, static_folder='public', template_folder='views')
 app.secret = os.environ.get('SECRET')
 
 
-# @app.after_request
-# def apply_kr_hello(response):
-#     """Adds some headers to all responses."""
-  
-#     # Made by Kenneth Reitz. 
-#     if 'MADE_BY' in os.environ:
-#         response.headers["X-Was-Here"] = os.environ.get('MADE_BY')
-    
-#     # Powered by Flask. 
-#     response.headers["X-Powered-By"] = os.environ.get('POWERED_BY')
-#     return response
-
-
 @app.route('/')
 def homepage():
     """Displays the homepage."""
