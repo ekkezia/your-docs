@@ -34,7 +34,7 @@ def background_process_test():
         sentence = text_model.make_sentence()
         sentence_group.append(sentence)
         # print(sentence)
-    print("<3<3<3🌸🌸!!!!!🌸💫")
+    print("<3<3<3🌸🌸!!!!!🌸💫 hello digital love languages")
 
     sentence_glue = "\n".join(sentence_group)
 
