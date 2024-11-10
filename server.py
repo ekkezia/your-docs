@@ -38,9 +38,26 @@ def background_process_test():
 
     sentence_glue = "\n".join(sentence_group)
 
-    print(sentence_glue)
+    split_text = list(sentence_glue);
+    print(split_text);
+    
+    print(split_text)
  
-    return (sentence_glue)
+    return (split_text)
+
+
+@app.route('/secret')
+def secret():
+    with open("audre_lorde_excerpt.txt") as f:
+      text = f.read()
+    
+    split_text = list(text);
+    print(split_text);
+    
+    return split_text;
+
+
+
 
 
 
