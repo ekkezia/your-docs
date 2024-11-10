@@ -4,7 +4,7 @@
 $(function() {
 
   $('#button').bind('click', function() {
-      console.log("button clicked!");
+      console.log("button clicked!🫵");
     
       $.get('/background_process_test', function(data) {
         for (let i = 0; i < data.length; i++) {
