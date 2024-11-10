@@ -7,10 +7,16 @@ $(function() {
       console.log("button clicked!");
     
       $.get('/background_process_test', function(data) {
-        console.log(data);
         for (let i = 0; i < data.length; i++) {
-          $('<span></span>').text(data[i]).appendTo('#content');
-          
+          const span = $('<span></span>').text(data[i]);
+          if (i % 2 === 0) {
+          span.addClass('hidden'); 
+        } else {
+          span.addClass('visible');
+        }
+                console.log('data', data[i]);
+
+        span.appendTo('#content');
         }
       });
     

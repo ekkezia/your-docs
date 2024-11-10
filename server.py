@@ -39,10 +39,8 @@ def background_process_test():
     sentence_glue = "\n".join(sentence_group)
 
     split_text = list(sentence_glue);
-    print(split_text);
-    
-    print(split_text)
- 
+    # print(split_text);
+     
     return (jsonify(split_text))
 
 
