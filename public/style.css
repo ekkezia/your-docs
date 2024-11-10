@@ -4,6 +4,13 @@
 /* You might want to try something fancier: */
 /* less: http://lesscss.org/ */
 
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2ecc71;
+  --background-color: #2ecc71;
+  --highlight-color: #e74c3c;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -11,7 +18,7 @@
 body {
   font-family: helvetica, arial, sans-serif;
   margin: 25px;
-  background-color: lightgrey;
+  background-color: var(--background-color);
 }
 
 h1 {
@@ -83,8 +90,8 @@ footer > a {
 }
 
 .visible {
-  color: black;
+  color: var(--primary-color);
 }
 .hidden {
-  color: lightgrey;
+  color: var(--secondary-color);
 }
