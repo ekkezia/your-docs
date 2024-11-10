@@ -43,19 +43,7 @@ def background_process_test():
     
     print(split_text)
  
-    return (split_text)
-
-
-@app.route('/secret')
-def secret():
-    with open("audre_lorde_excerpt.txt") as f:
-      text = f.read()
-    
-    split_text = list(text);
-    print(split_text);
-    
-    return split_text;
-
+    return (jsonify(split_text))
 
 
 
