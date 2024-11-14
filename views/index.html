@@ -11,26 +11,143 @@
 <html>
   <head>
     <title>🦋</title>
-    <meta name="description" content="A cool thing made with Glitch">
-    <link id="favicon" rel="icon" href="https://gomix.com/favicon-app.ico" type="image/x-icon">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/public/style.css">
+    <meta name="description" content="A cool thing made with Glitch" />
+    <link
+      id="favicon"
+      rel="icon"
+      href="https://gomix.com/favicon-app.ico"
+      type="image/x-icon"
+    />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Dots:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/public/style.css" />
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
   </head>
   <body>
+    <div class="header">
+      <div class="title-container">
+        <div id="title">
+          <input id="title-input" placeholder="Your Letter" value="Your Letter"></input>
+          <div>Your Letter</div>
+        </div>
 
-    <div id="button-container">
-      <button id="button">Test Me</button>
+        <div id="active-clients">
+         
+        </div>
+
+      </div>
+
+      <div class="menu">
+        <div class="dropdown">
+            <button class="dropbtn">File</button>
+            <div class="dropdown-content">
+              <a href="#">Link 1</a>
+              <a href="#">Link 2</a>
+              <a href="#">Link 3</a>
+            </div>
+        </div>
+                <div class="dropdown">
+            <button class="dropbtn">Edit</button>
+            <div class="dropdown-content">
+              <a href="#">Link 1</a>
+              <a href="#">Link 2</a>
+              <a href="#">Link 3</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button class="dropbtn">View</button>
+            <div class="dropdown-content">
+              <a href="#">Link 1</a>
+              <a href="#">Link 2</a>
+              <a href="#">Link 3</a>
+            </div>
+        </div>
+
+                <div class="dropdown">
+            <button class="dropbtn">Attach</button>
+            <div class="dropdown-content">
+              <a href="#">Link 1</a>
+              <a href="#">Link 2</a>
+              <a href="#">Link 3</a>
+            </div>
+        </div>
+
+                <div class="dropdown">
+            <button class="dropbtn">Format</button>
+            <div class="dropdown-content">
+              <a href="#">Link 1</a>
+              <a href="#">Link 2</a>
+              <a href="#">Link 3</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button class="dropbtn">Tools</button>
+            <div class="dropdown-content">
+              <a href="#">Link 1</a>
+              <a href="#">Link 2</a>
+              <a href="#">Link 3</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button class="dropbtn">Extensions</button>
+            <div class="dropdown-content">
+              <a href="#">Link 1</a>
+              <a href="#">Link 2</a>
+              <a href="#">Link 3</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button class="dropbtn">Help</button>
+            <div class="dropdown-content">
+              <a href="#">Link 1</a>
+              <a href="#">Link 2</a>
+              <a href="#">Link 3</a>
+            </div>
+        </div>
+
+      </div>
+
+      <div id="toolbar">
+        <!-- <div>🔎</div>
+        <div>↩️</div>
+        <div>↪️</div> -->
+        <div id="bold"><b>B</b></div>
+        <div id="italic"><i>I</i></div>
+
+        <!-- <select id="selectbox1">
+          <option value=""></option>
+          <option value="aye">Aye</option>
+          <option value="eh">Eh</option>
+          <option value="ooh">Ooh</option>
+          <option value="whoop">Whoop</option>
+        </select> -->
+
+      </div>
     </div>
-    <div id="content">
+
+    <div id="outer-container">
+      <div id="container" class="close">
+        <textarea id="text-container" placeholder="Come, type letter, join the fray, your voice is welcome here to play. Together, let our thoughts entwine. A letter pressed, a tale divine..."></textarea>
+                <div>
+        <div id="content"></div>
+        </div>
+      </div>
     </div>
-  
-    
-    <script src="https://code.jquery.com/jquery-2.2.1.min.js"
-            integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="
-            crossorigin="anonymous"></script>
+    <div id="floor"></div>
+
     <script src="/public/client.js"></script>
-
   </body>
 </html>
