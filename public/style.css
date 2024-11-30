@@ -50,43 +50,26 @@ body {
 }
 
 #title-input {
-  visibility: hidden;
-    cursor: text;
-    position: absolute;
-      font-size: 18px;
-  font-weight: 500;
-    height: 22px;
-    max-width: calc(100% - 40px);
-}
-
-#title {
   cursor: text;
-  position: relative;
-  min-height: 22px;
-  width: 100%;
-}
-
-#title > div {
-  display: block;
-  visibility: visible;
   font-size: 18px;
   font-weight: 500;
-  padding: 0;
-  margin: 0;
-  height: 22px;
-  display: flex;
-  align-items: center;
-  padding: 1px 5px;
-  border-radius: 4px;
+  height: fit-content;
   width: fit-content;
   max-width: calc(100% - 40px);
+  padding: 2px;
+  border: 1px solid white;
+  border-radius: 3px;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-      position: absolute;
-      &:hover {
-        border: 1px solid black;
-      }
+  &:hover {
+    border: 1px solid black;
+  }
+}
+
+#title-input:empty::before {
+  content: attr(placeholder);
+  color: gray;
 }
 
 #toolbar {
@@ -202,7 +185,7 @@ textarea {
   max-width: 100%;
   border: none;
   font-family: Google Sans, Arial, Helvetica, sans-serif;
-  font-size: 14px;
+  font-size: 18px;
   color: white;
   position: absolute;
   top: 25px;
@@ -217,6 +200,9 @@ textarea {
 #text-container {
   width: calc(100% - 50px);
   height: 100%;
+  color: lightgrey;
+  border: none;
+    outline: none;
 }
 
 textarea:focus {
@@ -225,7 +211,7 @@ textarea:focus {
 }
 
 #content {
-  font-size: 14px;
+  font-size: 18px;
   position: absolute;
   top: 25px;
   left: 25px;

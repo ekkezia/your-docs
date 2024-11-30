@@ -28,97 +28,143 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/public/style.css" />
-    
+
     <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.min.js"></script>
-     <script src="/public/client.js" defer></script>
+    <script src="/public/client.js" defer></script>
   </head>
   <body>
     <div class="header">
       <div class="title-container">
-        <div id="title">
-          <input id="title-input" placeholder="Your Docs" value="Your Docs"></input>
-          <div>Your Docs</div>
-        </div>
+        <div
+          id="title-input"
+          contenteditable="true"
+          placeholder="Your Docs"
+        ></div>
 
-        <div id="active-clients">
-         
-        </div>
-
+        <div id="active-clients"></div>
       </div>
 
       <div class="menu">
         <div class="dropdown">
-            <button class="dropbtn">File</button>
-            <div class="dropdown-content">
-              <a href="https://klogs.e-kezia.com" target="_blank">My Portfolio</a>
-              <a href="https://drive.google.com/drive/folders/1xql1FBVSo6k82GEbMxADmyQ7OsRJeVzi?usp=sharing" target="_blank">My Business Card</a>
-              <a href="https://drive.google.com/drive/folders/1OIam-X65GWUOQbzE11nujBXm4IBXPwtG?usp=sharing" target="_blank">My Desktop</a>
-            </div>
+          <button class="dropbtn">File</button>
+          <div class="dropdown-content">
+            <a href="https://klogs.e-kezia.com" target="_blank">My Portfolio</a>
+            <a
+              href="https://drive.google.com/drive/folders/1xql1FBVSo6k82GEbMxADmyQ7OsRJeVzi?usp=sharing"
+              target="_blank"
+              >My Business Card</a
+            >
+            <a
+              href="https://drive.google.com/drive/folders/1OIam-X65GWUOQbzE11nujBXm4IBXPwtG?usp=sharing"
+              target="_blank"
+              >My Desktop</a
+            >
+          </div>
         </div>
 
         <div class="dropdown">
-            <button class="dropbtn">Edit</button>
-            <div class="dropdown-content">
-              <a href="https://en.wikipedia.org/wiki/Economic_system" target="_blank">Economic System</a>
-              <a href="https://en.wikipedia.org/wiki/Educational_system" target="_blank">Education System</a>
-              <a href="https://en.wikipedia.org/wiki/Public_housing" target="_blank">Housing System</a>
-            </div>
+          <button class="dropbtn">Edit</button>
+          <div class="dropdown-content">
+            <a
+              href="https://en.wikipedia.org/wiki/Economic_system"
+              target="_blank"
+              >Economic System</a
+            >
+            <a
+              href="https://en.wikipedia.org/wiki/Educational_system"
+              target="_blank"
+              >Education System</a
+            >
+            <a
+              href="https://en.wikipedia.org/wiki/Public_housing"
+              target="_blank"
+              >Housing System</a
+            >
+          </div>
         </div>
 
         <div class="dropdown">
-            <button class="dropbtn">View</button>
-            <div class="dropdown-content">
-              <a href="https://maps.app.goo.gl/k2s5zHi5kr8cJRxD8" target="_blank">My Childhood</a>
-              <a href="https://maps.app.goo.gl/NQjrKtkk9zLL5sYC6" target="_blank">My Puberty</a>
-              <a href="https://maps.app.goo.gl/LW1Xmo21rPjMWDzG7" target="_blank">My Awakening</a>
-            </div>
+          <button class="dropbtn">View</button>
+          <div class="dropdown-content">
+            <a href="https://maps.app.goo.gl/k2s5zHi5kr8cJRxD8" target="_blank"
+              >My Childhood</a
+            >
+            <a href="https://maps.app.goo.gl/NQjrKtkk9zLL5sYC6" target="_blank"
+              >My Puberty</a
+            >
+            <a href="https://maps.app.goo.gl/LW1Xmo21rPjMWDzG7" target="_blank"
+              >My Awakening</a
+            >
+          </div>
         </div>
 
         <div class="dropdown">
-            <button class="dropbtn">Attach</button>
-            <div class="dropdown-content">
-              <a href="mailto:e.kezia@gmail.com" target=""_blank>To My letterbox</a>
-              <a href="https://docs.google.com/forms/d/e/1FAIpQLSfEzC4SVQoToKrOUTI5BGCdEAgOS1c016dlKnXn_GooI-NPjA/viewform?usp=sharing">Your Letter</a>
-            </div>
+          <button class="dropbtn">Attach</button>
+          <div class="dropdown-content">
+            <a href="mailto:e.kezia@gmail.com" target="" _blank
+              >To My letterbox</a
+            >
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSfEzC4SVQoToKrOUTI5BGCdEAgOS1c016dlKnXn_GooI-NPjA/viewform?usp=sharing"
+              >Your Letter</a
+            >
+          </div>
         </div>
 
         <div class="dropdown">
-            <button class="dropbtn">Format</button>
-            <div class="dropdown-content">
-              <a href="#">Your Space</a>
-              <a href="#">With Others</a>
-            </div>
+          <button class="dropbtn">Format</button>
+          <div class="dropdown-content">
+            <a href="#">Your Space</a>
+            <a href="#">With Others</a>
+          </div>
         </div>
 
         <div class="dropdown">
-            <button class="dropbtn">Tools</button>
-            <div class="dropdown-content">
-              <a href="#">Your Thoughts</a>
-              <a href="#">Your Time</a>
-              <a href="https://invisible-ink.e-kezia.com" target="_blank">Invisible Ink</a>
-              <a href="https://my-name-is.e-kezia.com" target="_blank">Search Engine</a>
-            </div>
+          <button class="dropbtn">Tools</button>
+          <div class="dropdown-content">
+            <a href="#">Your Thoughts</a>
+            <a href="#">Your Time</a>
+            <a href="https://invisible-ink.e-kezia.com" target="_blank"
+              >Invisible Ink</a
+            >
+            <a href="https://my-name-is.e-kezia.com" target="_blank"
+              >Search Engine</a
+            >
+          </div>
         </div>
 
         <div class="dropdown">
-            <button class="dropbtn">Extensions</button>
-            <div class="dropdown-content">
-              <a href="#https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRf3QnqxrhG_PriFDsMsRbpQQWxbRQG3sNIIA&s" target="_blank">Mars</a>
-              <a href="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Jupiter_and_its_shrunken_Great_Red_Spot.jpg/640px-Jupiter_and_its_shrunken_Great_Red_Spot.jpg" target="_blank">Jupiter</a>
-              <a href="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Saturn_during_Equinox.jpg/800px-Saturn_during_Equinox.jpg" target="_blank">Saturn</a>
-            </div>
+          <button class="dropbtn">Extensions</button>
+          <div class="dropdown-content">
+            <a
+              href="#https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRf3QnqxrhG_PriFDsMsRbpQQWxbRQG3sNIIA&s"
+              target="_blank"
+              >Mars</a
+            >
+            <a
+              href="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Jupiter_and_its_shrunken_Great_Red_Spot.jpg/640px-Jupiter_and_its_shrunken_Great_Red_Spot.jpg"
+              target="_blank"
+              >Jupiter</a
+            >
+            <a
+              href="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Saturn_during_Equinox.jpg/800px-Saturn_during_Equinox.jpg"
+              target="_blank"
+              >Saturn</a
+            >
+          </div>
         </div>
 
         <div class="dropdown">
-            <button class="dropbtn">Help</button>
-            <div class="dropdown-content">
-              <a href="#">The Earth</a>
-              <a href="#">The World</a>
-              <a href="https://www.google.com.sg/search?q=whoami" target="_blank">Yourself</a>
-            </div>
+          <button class="dropbtn">Help</button>
+          <div class="dropdown-content">
+            <a href="#">The Earth</a>
+            <a href="#">The World</a>
+            <a href="https://www.google.com.sg/search?q=whoami" target="_blank"
+              >Yourself</a
+            >
+          </div>
         </div>
-
       </div>
 
       <div id="toolbar">
@@ -135,13 +181,16 @@
           <option value="ooh">Ooh</option>
           <option value="whoop">Whoop</option>
         </select> -->
-
       </div>
     </div>
 
     <div id="outer-container">
       <div id="container" class="close">
-        <textarea id="text-container" placeholder="Come, type letter, join the fray, your voice is welcome here to play. Together, let our thoughts entwine. A letter pressed, a tale divine..."></textarea>
+        <div
+          contenteditable
+          id="text-container"
+          placeholder="Come, type letter, join the fray, your voice is welcome here to play. Together, let our thoughts entwine. A letter pressed, a tale divine..."
+        ></div>
         <div id="content"></div>
       </div>
     </div>

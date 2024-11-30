@@ -14,7 +14,7 @@ function generateDOM(data, randomIndex) {
 
   for (let i = 0; i < lines.length; i++) {
     for (let j = 0; j < lines[i].length; j++) {
-      console.log('lines', lines[i][j]);
+      // console.log('lines', lines[i][j]);
       const span = $('<span></span>').text(lines[i][j]);
 
       if (randomIndex.includes(j)) {
@@ -50,17 +50,16 @@ socket.on('active_client', function (data) {
 
 // Update socket when someone changest title
 socket.on('update_title', function (data) {
-  $('#title-input').placeholder = data.title;
-  $('#title>div').text(data.title);
+  $('#title-input').text(data.title);
 });
 
 // Update socket when someone types
 socket.on('update_text', function (data) {
-  if (data !== '') {
+  if (data.text !== '') {
     $('#content').html(data.text);
     $('#text-container').val(data.text);
   }
-  console.log('new text!!!!! 💌', data.text);
+  // console.log('new text!!!!! 💌', data);
   text = data.text;
 });
 
@@ -90,47 +89,19 @@ socket.on('update_italic', function (data) {
 });
 
 $('#text-container').on('input', function (event) {
-  // console.log('input now', event.target.value);
-  let text = event.target.value;
+  let text = event.target.textContent.trim();
   socket.emit('text_change', text);
 });
 
 // Menu Bar UI Stuff
-
-$('#title').click(function () {
-  var currentVisibility = $('#title-input').css('visibility');
-  if (currentVisibility === 'hidden') {
-    $('#title-input').css('visibility', 'visible');
-    $('#title-input').focus();
-    $('#title>div').css('visibility', 'hidden');
+// Title Input
+$('#title-input').on('input', function () {
+  // console.log('inputting', $(this).text().trim());
+  var newText = $(this).text().trim();
+  if (newText === '') {
+    $('#title-input').attr('placeholder', 'Your Blank Docs');
   }
-});
-
-$('#title-input').blur(function () {
-  var currentVisibility = $('#title-input').css('visibility');
-  if (currentVisibility === 'visible') {
-    $('#title-input').css('visibility', 'hidden');
-    $('#title>div').css('visibility', 'visible');
-  }
-});
-
-$('#title-input').blur(function () {
-  var newText = $('#title-input').val();
-  if (newText !== '') {
-    $('#title-input').placeholder = $('#title-input').val();
-    $('#title>div').text(newText);
-
-    socket.emit('title_change', newText);
-  } else {
-    $('#title-input').placeholder = 'Your Docs';
-    $('#title>div').text('A Blank Letter');
-  }
-
-  var currentVisibility = $('#title-input').css('visibility');
-  if (currentVisibility === 'visible') {
-    $('#title-input').css('visibility', 'hidden');
-    $('#title>div').css('visibility', 'visible');
-  }
+  socket.emit('title_change', newText);
 });
 
 $('#content').click(function () {

@@ -54,6 +54,7 @@ app.secret = os.environ.get("SECRET")
 active_clients = []
 client_text = {}
 selected_random_index = set()
+title = ""
 text = ""
 client_num = 0
 
@@ -92,6 +93,7 @@ def handle_connect():
     client_num += 1
 
     socketio.emit("active_client", active_clients)
+    socketio.emit("update_title", {"cid": client_id, "title": title})
     socketio.emit("update_text", {"cid": client_id, "text": text})
 
     print(
@@ -142,10 +144,12 @@ def handle_disconnect():
 
 
 @socketio.on("title_change")
-def handle_text(title):
-    print("title change", text)
+def handle_text(_title):
+    global title
+
     client_id = request.sid
     client_text[client_id] = text
+    title = _title
 
     socketio.emit("update_title", {"cid": client_id, "title": title})
 
